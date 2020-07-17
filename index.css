@@ -1,0 +1,71 @@
+ *, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Mulish, sans-serif;
+    font-weight: 300;
+ }
+
+ ::-moz-selection { /* Code for Firefox */
+    color: rgb(184, 239, 241);
+    background: rgb(197, 218, 255);
+  }
+  
+  ::selection {
+    color: rgb(184, 239, 241);
+    background: rgb(197, 218, 255);
+  }
+
+ body {
+    padding: 0;
+    margin: 0;
+    background: rgb(30,103,97);
+    background: linear-gradient(270deg, rgba(30,103,97,1) 0%, rgba(166,125,95,1) 88%);
+ }
+ 
+#container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+#container > button {
+    background-color: rgb(213, 214, 255);
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid rgb(241, 252, 255);
+    outline: none;
+}
+
+#container > button:hover {
+    background-color: rgb(225, 225, 251);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color:rgb(82, 89, 109);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output > .history {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.output > .current {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2.5rem;
+    font-weight: 500;
+}

@@ -42,10 +42,6 @@
     background-color: rgb(225, 225, 251);
 }
 
-.span-two {
-    grid-column: span 2;
-}
-
 .output {
     grid-column: 1 / -1;
     background-color:rgb(82, 89, 109);
@@ -58,13 +54,13 @@
     word-break: break-all;
 }
 
-.output > .history {
+.output > .previous-operand {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-.output > .current {
+.output > .current-operand {
     color: rgba(255, 255, 255, 1);
     font-size: 2.5rem;
     font-weight: 500;

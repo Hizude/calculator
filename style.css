@@ -5,12 +5,12 @@
  }
 
  ::-moz-selection { /* Code for Firefox */
-    color: rgb(184, 239, 241);
+    color: rgb(101, 156, 158);
     background: rgb(197, 218, 255);
   }
   
   ::selection {
-    color: rgb(184, 239, 241);
+    color: rgb(101, 156, 158);
     background: rgb(197, 218, 255);
   }
 
@@ -54,13 +54,13 @@
     word-break: break-all;
 }
 
-.output > .previous-operand {
+.output > .operand {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-.output > .current-operand {
+.output > .answer {
     color: rgba(255, 255, 255, 1);
     font-size: 2.5rem;
     font-weight: 500;

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="hiclipart.com.png">
     <title>Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
         <div class="output">
-            <div data-previous-operand class="previous-operand"></div>
-            <div data-current-operand class="current-operand"></div>
+            <div data-answer class="answer"></div>
+            <div data-operand class="operand"></div>
         </div>
         <button data-clear-everything>CE</button>
         <button data-clear>C</button>
@@ -24,16 +25,16 @@
         <button data-number>4</button>
         <button data-number>5</button>
         <button data-number>6</button>
-        <button data-operation>−</button>
+        <button data-operation>-</button>
         <button data-number>7</button>
         <button data-number>8</button>
         <button data-number>9</button>
         <button data-operation>+</button>
         <button data-number>.</button>
         <button data-number>0</button>
-        <button data-number>Ans</button>
+        <button data-ans>Ans</button>
         <button data-equals>=</button>
     </div>
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

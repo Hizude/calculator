@@ -17,8 +17,7 @@
  body {
     padding: 0;
     margin: 0;
-    background: rgb(30,103,97);
-    background: linear-gradient(270deg, rgba(30,103,97,1) 0%, rgba(166,125,95,1) 88%);
+    background: linear-gradient(#14213d, #000000);
  }
  
 #container {
@@ -31,7 +30,7 @@
 }
 
 #container > button {
-    background-color: rgb(213, 214, 255);
+    background-color: #e5e5e5;
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid rgb(241, 252, 255);
@@ -39,12 +38,12 @@
 }
 
 #container > button:hover {
-    background-color: rgb(225, 225, 251);
+    background-color: rgb(250, 241, 241);
 }
 
 .output {
     grid-column: 1 / -1;
-    background-color:rgb(82, 89, 109);
+    background-color: #fca311;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -54,14 +53,14 @@
     word-break: break-all;
 }
 
-.output > .operand {
+.output > .current-operand {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-.output > .answer {
-    color: rgba(255, 255, 255, 1);
+.output > .previous-operand {
+    color: #faf1f1;
     font-size: 2.5rem;
     font-weight: 500;
 }

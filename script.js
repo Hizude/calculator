@@ -1,35 +1,6 @@
-class Calculator {
-    constructor(operand, answer){
-        this.operand = operand;
-        this.answer = answer;
-        // clearEverything();
-    }
-    
-    clear() {
-        
-    }
-
-    clearEverything() {
-
-    }
-
-    delete() {
-
-    }
-
-    updateDisplay() {
-
-    }
-
-    append() {
-
-    }
-
-    compute() {
-
-    }
-
-}
+// On numBtn press, append num to currentOperand.innerText
+// have 3 vars: prev, operator, current
+ // on operator press, move operand up and type new num in current operand
 
 const numberBtns = document.querySelectorAll('[data-number]');
 const operationBtns = document.querySelectorAll('[data-operation]');
@@ -38,28 +9,64 @@ const ansBtn = document.querySelector('[data-ans]');
 const clearEverythingBtn = document.querySelector('[data-clear-everything]');
 const clearBtn = document.querySelector('[data-clear]');
 const deleteBtn = document.querySelector('[data-delete]');
-let operand = document.querySelector('[data-operand]');
-let answer = document.querySelector('[data-answer]');
-answer.innerText = '1241';
-operand.innerText = '324 * 20 - (41 + 24)'
+let currentOperand = document.querySelector('[data-current-operand]');
+let previousOperand = document.querySelector('[data-previous-operand]');
+let prev;
+let operator;
+let current;
+let computation;
 
-const calculator = new Calculator(operand, answer);
+function append(number) {
+    if (number === '.' && currentOperand.innerText.includes('.')) return;
+    if (currentOperand.innerText === '' && isNaN(number)) return;
+    currentOperand.innerText += number;
+}
 
-// event listeners
+function chooseOperator(chosenOperator) {
+    operator = chosenOperator;
+    append(operator);
+    if (currentOperand == '' && number == operator) {
+        updateDisplay();
+    }
+}
+
+function updateDisplay() {
+    previousOperand.innerText += currentOperand.innerText;
+    currentOperand.innerText = '';
+}
+
+function clearEverything() {
+    previousOperand.innerText = '';
+    currentOperand.innerText = '';
+    prev = '';
+    operator = undefined;
+    current = '';
+    computation = '';
+}
+
+function clear() {
+    //
+}
+
+// 'delete' is reserved word so 'backspace' is alternative.
+function backspace() {
+    //
+}
+
 numberBtns.forEach(button => {
     button.addEventListener('click', () => {
-        //
+        append(button.innerText);
     })
 })
-
 operationBtns.forEach(button => {
     button.addEventListener('click', () => {
-        //
+        chooseOperator(button.innerText);
+        updateDisplay();
     })
 })
 
 equalBtn.addEventListener('click', () => {
-    //
+    compute();
 })
 
 ansBtn.addEventListener('click', () => {
@@ -67,7 +74,7 @@ ansBtn.addEventListener('click', () => {
 })
 
 clearEverythingBtn.addEventListener('click', () => {
-    //
+    clearEverything();
 })
 
 clearBtn.addEventListener('click', () => {

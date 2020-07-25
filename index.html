@@ -7,12 +7,13 @@
     <title>Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="container">
         <div class="output">
-            <div data-answer class="answer"></div>
-            <div data-operand class="operand"></div>
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
         </div>
         <button data-clear-everything>CE</button>
         <button data-clear>C</button>
@@ -35,6 +36,5 @@
         <button data-ans>Ans</button>
         <button data-equals>=</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

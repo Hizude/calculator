@@ -73,3 +73,19 @@
 .new-round-output {
     background-color: #b97303;
 }
+
+.slider-container {
+    position: absolute;
+    top: 35%;
+    right: 10%;
+}
+
+.slider-container > h3 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+#slider-input {
+    width: 100%;
+}

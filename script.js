@@ -1,5 +1,4 @@
-// TODO: keyboard functionality, improve code readability, input for 
-// amount of digits after comma
+// TODO: improve code readability
 
 let allBtns = document.querySelectorAll('button');
 const numberBtns = document.querySelectorAll('[data-number]');
@@ -10,12 +9,20 @@ const clearEverythingBtn = document.querySelector('[data-clear-everything]');
 const clearBtn = document.querySelector('[data-clear]');
 const deleteBtn = document.querySelector('[data-delete]');
 const outputDiv = document.querySelector('.output');
+const tap = new Audio('assets/keyboardpress.mp3');
+const slider = document.getElementById('slider-input');
+const valueDisplay = document.getElementById('value-display');
+tap.volume = 0.3;
 let currentOperand = document.querySelector('[data-current-operand]');
 let previousOperand = document.querySelector('[data-previous-operand]');
 let operator;
 let ans = 0;
 
 // functions
+slider.oninput = function() {
+    valueDisplay.innerText = this.value;
+}
+
 // add the number/operator pressed to the section below.
 function append(number) {
     if (number === '.' && currentOperand.innerText.includes('.')) return;
@@ -64,7 +71,7 @@ function compute() {
         default:
             return;
     }
-    previousOperand.innerText = parseFloat(computation.toFixed(4));
+    previousOperand.innerText = parseFloat(computation.toFixed(parseInt(valueDisplay.innerText)));
     ans = previousOperand.innerText;
     currentOperand.innerText = '';
 }
@@ -111,6 +118,13 @@ function ansFunc() {
 }
 
 // event listeners
+allBtns.forEach(button => {
+    button.addEventListener('click', () => {
+        tap.currentTime = 0;
+        tap.play();
+    })
+})
+
 numberBtns.forEach(button => {
     button.addEventListener('click', () => {
         append(button.innerText);
